@@ -6,8 +6,6 @@ In addition to the necessary instructions required to start the project, I would
 The project works as it is in the original repository, I just added the endpoint requested with the input data validations. Additionally I attach the postman.json (`libs/postman/challenge_v1.postman_collection_RESOLVED.json`) with the request and the data I used to test.
 Stay tuned.
 
-Translated with www.DeepL.com/Translator (free version)
-
 #### Introduction
 
 The present challenge pretends to evaluate the level of experience of a backend NodeJS developer that had worked with MongoDB.
