@@ -22,6 +22,7 @@ mongoose.connect(config.get('mongodb.uri'), {
   useUnifiedTopology: true
 });
 mongoose.connection.on('error', (err) => {
+  console.log(err);
   throw err;
 });
 mongoose.connection.on('connected', async () => {

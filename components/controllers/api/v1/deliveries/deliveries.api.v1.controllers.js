@@ -6,6 +6,7 @@ import { responses } from '@/router/globalMiddlewares/response.middlewares';
 import { getValidator, validator } from 'libs/validator/validator';
 import validations from './deliveries.api.v1.validations';
 import deliveriesCommonServices from '@/services/deliveries/common.deliveries.services';
+import search from '@/services/search_deliveries/common.search.services'
 
 
 // ------------------ init router --------------
@@ -16,6 +17,9 @@ const router = express.Router()
 
 // CRUD requests
 // deliveries
+
+
+
 router.route('/')
   .get(
     (req, res, next) => handler(getValidator, req, res, next, validations['mainGet']),
@@ -23,6 +27,11 @@ router.route('/')
   .post(
     (req, res, next) => handler(validator, req, res, next, validations['mainPost']),
     (req, res, next) => responses(deliveriesCommonServices.create, req, res, next))
+
+router.route('/search')
+  .get(
+    (req, res, next) => handler(getValidator, req, res, next, validations['searchGet']),
+    (req, res, next) => responses(search, req, res, next));
 
 router.route('/:id')
   .get(
